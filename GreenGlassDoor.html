@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Green Glass Door</title>
+    </head> 
+    
+    <body>
+        <script>
+            
+            function sleep(delay) {
+                var start = new Date().getTime();
+                while (new Date().getTime() < start + delay);
+            }
+            
+            this.sleep(5000)
+            
+            
+            //examples
+            var example1= "I can bring a kitten through the Green Glass Door, but I cannot bring a cat."
+            var example2= "I can bring a puppy through the Green Glass Door, but I cannot bring a dog."
+            var example3= "I can bring the moon through the Green Glass Door, but I cannot bring the sun."
+            var example4= "I can bring Harry Potter through the Green Glass Door, but I cannot bring Ron Weasley."
+            var example5= "I can bring boots through the Green Glass Door, but I cannot bring sandals."
+            var example6= "I can bring a puddle through the Green Glass Door, but I cannot bring water."
+            var example7= "I can bring the floor through the Green Glass Door, but I cannot bring the ceiling."
+            var example8= "I can bring a Noodles through the Green Glass Door, but I cannot bring a Captain."
+            
+            
+            var attempt= 1
+            
+            
+            alert("Welcome to the Green Glass Door! This door is no ordinary door! It is a magical door that will only let certain things pass through it!")
+            alert("You're task is to figure out why some things can pass through while others can not!")
+            
+            var response= prompt("Are you ready to get started?")
+            response.toLocaleLowerCase()
+            
+            if(response == "yes" || response == "yup" || response == "sure" || response == "lets do this"){
+                alert("Awesome! I'll start us off with some examples!")
+            } else if(response == "no" || response == "nope"){
+                alert("Don't worry. You'll get the hang of it! I'll get us started off with a few examples to get you warmed up!")
+            } else {
+                alert("You seem a little confused... How about I start us off with some examples!")
+            }
+            
+            alert(example1) 
+            alert(example2) 
+            alert(example3)
+            
+            alert("Now you give it a try!")
+            
+            while(true){
+                response= prompt("What would you like to try bringing through the Green Glass Door?")
+                response.toLocaleLowerCase()
+                
+                var i= 0
+                var j= 1
+                
+                while(j < response.length){
+                    if(response.charAt(i) == response.charAt(j)){
+                        alert("Yes! You can bring " + response + " through the Green Glass Door!")
+                        break
+                    } else if(j == response.length - 1){
+                        alert("Sorry. " + response + " can't come through the Green Glass Door.")
+                    }
+                    i++
+                    j++
+                }
+                
+                
+                if((attempt % 5) == 0){
+                    response= prompt("So do you think you know the secret yet?")
+                    response.toLocaleLowerCase()
+                    
+                    if(response == "yes"){
+                        response= prompt("Alright, what do these things have in common that allows them to pass through the Green Glass Door?")
+                        response.toLocaleLowerCase()
+                        
+                        if(response.includes("double") && (response.includes("letter") || response.includes("character"))){
+                            alert("Congratulations! You solved the riddle!!!")
+                            break
+                        } else {
+                            alert("I'm not quite sure you have it just yet. Here's another example:")
+                            alert(example4)
+                        } 
+                    } else {
+                        alert("Here how about I give you another example:")
+                        if(attempt <= 5){
+                            alert(example5)
+                        } else if(attempt <= 10){
+                            alert(example6)
+                        } else if(attempt <= 15){
+                            alert(example7)
+                        } else if(attempt <= 20){
+                            alert(example8)
+                        } else{
+                            alert(example1)
+                            alert(example2)
+                            alert(example3)
+                        }
+                    }
+                }else{
+                    alert("Alright! Give it another try!")
+                }
+                
+                attempt += 1
+            }
+            
+            
+        </script>
+        
+    </body>
+</html>
